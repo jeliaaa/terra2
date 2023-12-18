@@ -11,7 +11,6 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-scroll";
 import { useEffect } from "react";
-import ReactPlayer from "react-player";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -62,6 +61,9 @@ function App() {
                 <Link className="nav-link navLinks" to="about">
                   {t('about')}
                 </Link>
+                <Link className="nav-link navLinks" to="about">
+                  {t('overview')}
+                </Link>
                 <Link className="nav-link navLinks" to="teamVision">
                   {t('teamVision')}
                 </Link>
@@ -72,7 +74,16 @@ function App() {
                   {t('projectProgress')}
                 </Link>
                 <Link className="nav-link navLinks" to="team">
+                  {t('achievements')}
+                </Link>
+                <Link className="nav-link navLinks" to="team">
+                  {t('partners')}
+                </Link>
+                <Link className="nav-link navLinks" to="team">
                   {t('team')}
+                </Link>
+                <Link className="nav-link navLinks" to="team">
+                  {t('contact')}
                 </Link>
               </Nav>
             </Offcanvas.Body>
@@ -139,6 +150,7 @@ function App() {
           </div>
           <iframe src="https://drive.google.com/file/d/1PhDKUUXOUA5YAyk58pAUK6r9CTHqdoTc/preview" width="95%" height="280" allow="autoplay"></iframe>
         </div>
+        <hr />
         <div className="block">
           <h4>Monitoring system</h4>
           <div className="text_wrap">
@@ -187,6 +199,8 @@ function App() {
         </div>
       </Scroll.Element>
       <Scroll.Element name="projectProgress" className="info">
+        <h1 className="mb-3">Project Progress</h1>
+        <hr />
         <Swiper
           effect={'coverflow'}
           grabCursor={true}
@@ -223,8 +237,31 @@ function App() {
 
         {/* <ReactPlayer controls url={'https://youtu.be/DeumyOzKqgI?si=I8C-HXa0AmPkhofN'} /> */}
       </Scroll.Element>
-      <Scroll.Element>
-
+      <Scroll.Element name="achievements" className="partners" style={{ backgroundColor: 'gold' }}>
+        <h1>Achievements</h1>
+        <hr />
+        <ul id="achievements">
+          <li>Completed a challenging project ahead of schedule, exceeding expectations.</li>
+          <li>Received Employee of the Month award for outstanding dedication and performance.</li>
+          <li>Successfully led a cross-functional team to achieve a 20% increase in productivity.</li>
+          <li>Implemented innovative solutions that resulted in a cost savings of 15%.</li>
+          <li>Attained a professional certification in [Your Field of Expertise].</li>
+          <li>Published an article in [Reputable Journal/Magazine] on [Topic].</li>
+          <li>Contributed to [Company/Team] winning the [Specific Award or Recognition].</li>
+          <li>Consistently met or exceeded sales targets for [Number] consecutive quarters.</li>
+          <li>Volunteered for and successfully executed a community outreach program.</li>
+          <li>Completed [Number] hours of professional development training in [Specific Skill].</li>
+        </ul>
+      </Scroll.Element>
+      <Scroll.Element name="partners" className="partners">
+        <h1>Partners</h1>
+        <hr style={{ width: '100%' }} />
+        {[0, 1, 2, 3].map((e) => (
+          <div key={e} className="partner">
+            <p>Lorem ipsum dolor sit.</p>
+            <img src="https://picsum.photos/100" alt="..." />
+          </div>
+        ))}
       </Scroll.Element>
       <Scroll.Element name="team" className="team" style={{ backgroundColor: 'red', padding: 20 }}>
         <h2 className="mb-4">{t('team')}</h2>
@@ -240,6 +277,17 @@ function App() {
             </Carousel.Item>
           ))}
         </Carousel>
+      </Scroll.Element>
+      <Scroll.Element name="contact" className="partners" style={{ backgroundColor: 'yellowgreen' }}>
+        <h1>Contact us</h1>
+        <hr />
+        {['instagram', 'facebook', 'telegram', 'linkedin'].map((e) => (
+          <a key={e} href={`https://${e}.com`} className="partner">
+            <p>{e}</p>
+            <img src="https://picsum.photos/100" alt="..." />
+            
+          </a>
+        ))}
       </Scroll.Element>
     </div>
   );
