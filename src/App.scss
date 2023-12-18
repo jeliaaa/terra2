@@ -102,17 +102,10 @@
   background-size: cover;
   width: 150px !important;
   height: 150px !important;
-  box-shadow: unset !important;
-  text-align: center;
-  img{
-    border-radius: 50% !important;
-  }
+  text-align: center; 
 }
 
 .swiper-slide img {
   display: block;
   width: 100%;
 }
-.swiper-slide-shadow-left, .swiper-slide-shadow-right{
-  display: none !important;
-} 
