@@ -1,19 +1,12 @@
-import logo from "./logo.svg";
 import "./App.scss";
 import "./i18n";
 import { useTranslation } from "react-i18next";
 import {
-  Button,
-  Card,
   Carousel,
-  Col,
   Container,
-  Form,
   Nav,
-  NavDropdown,
   Navbar,
   Offcanvas,
-  Row,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-scroll";
@@ -30,7 +23,7 @@ function App() {
   const scroll = Scroll.animateScroll;
   useEffect(() => {
     scroll.scrollToTop();
-  }, []);
+  });
   const teamMembers = [
     {
       id: 1,
@@ -101,7 +94,61 @@ function App() {
           <img src="https://picsum.photos/800" alt="..." />
         </div>
       </Scroll.Element>
+      <Scroll.Element name="overview" className="overview">
+        <h1>Project overview</h1>
+        <hr />
+        <div className="video_wrap">
+          <h4>Introduction to Project</h4>
+          <iframe src="https://drive.google.com/file/d/1PhDKUUXOUA5YAyk58pAUK6r9CTHqdoTc/preview" width="95%" height="280" allow="autoplay"></iframe>
+        </div>
+        <hr />
+        <div className="block">
+          <h4>Robot Miner</h4>
+          <Carousel interval={500} style={{ width: '100%' }}>
+            {[1, 2, 3].map((member) => (
+              <Carousel.Item>
+                <img style={{ width: '100%' }} src="https://picsum.photos/200" alt="..." />
+              </Carousel.Item>
+            ))}
+          </Carousel>
+          <div className="text_wrap">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit quos voluptates nulla nostrum quisquam ratione at corporis mollitia expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. In libero dolorum beatae corrupti laudantium odio ipsa, cum repudiandae quo exercitationem aliquam sed. Numquam eaque quisquam quae tenetur nesciunt odit blanditiis!</p>
+          </div>
+          <iframe src="https://drive.google.com/file/d/1PhDKUUXOUA5YAyk58pAUK6r9CTHqdoTc/preview" width="95%" height="280" allow="autoplay"></iframe>
+        </div>
+        <hr />
+        <div className="block">
+          <h4>Smart Uniform</h4>
+          <Carousel interval={500} style={{ width: '100%' }}>
+            {[1, 2, 3].map((member) => (
+              <Carousel.Item>
+                <img style={{ width: '100%' }} src="https://picsum.photos/200" alt="..." />
+              </Carousel.Item>
+            ))}
+          </Carousel>
+          <div className="text_wrap">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit quos voluptates nulla nostrum quisquam ratione at corporis mollitia expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. In libero dolorum beatae corrupti laudantium odio ipsa, cum repudiandae quo exercitationem aliquam sed. Numquam eaque quisquam quae tenetur nesciunt odit blanditiis!</p>
+          </div>
+          <iframe src="https://drive.google.com/file/d/1PhDKUUXOUA5YAyk58pAUK6r9CTHqdoTc/preview" width="95%" height="280" allow="autoplay"></iframe>
+        </div>
+        <hr />
+        <div className="block">
+          <h4>Smart Ventilation</h4>
+          <div className="text_wrap">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit quos voluptates nulla nostrum quisquam ratione at corporis mollitia expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. In libero dolorum beatae corrupti laudantium odio ipsa, cum repudiandae quo exercitationem aliquam sed. Numquam eaque quisquam quae tenetur nesciunt odit blanditiis!</p>
+          </div>
+          <iframe src="https://drive.google.com/file/d/1PhDKUUXOUA5YAyk58pAUK6r9CTHqdoTc/preview" width="95%" height="280" allow="autoplay"></iframe>
+        </div>
+        <div className="block">
+          <h4>Monitoring system</h4>
+          <div className="text_wrap">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit quos voluptates nulla nostrum quisquam ratione at corporis mollitia expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. In libero dolorum beatae corrupti laudantium odio ipsa, cum repudiandae quo exercitationem aliquam sed. Numquam eaque quisquam quae tenetur nesciunt odit blanditiis!</p>
+          </div>
+          <iframe src="https://drive.google.com/file/d/1PhDKUUXOUA5YAyk58pAUK6r9CTHqdoTc/preview" width="95%" height="280" allow="autoplay"></iframe>
+        </div>
+      </Scroll.Element>
       <Scroll.Element name="teamVision" className="teamVision" style={{ backgroundColor: 'darkviolet' }}>
+        <h1>Team missions and visions</h1>
         <div className="text_wrap">
           <h2>Missions</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ullam alias officia non expedita rerum nihil veritatis consequatur quos porro? Minus eaque excepturi culpa aspernatur amet maiores possimus cumque accusamus dolore alias obcaecati ipsum, error ut quia est perspiciatis. Delectus praesentium ipsam sint, dignissimos laboriosam optio? Odit cum doloremque dolores iure ullam possimus quibusdam! Voluptatum, minus est vitae quaerat quas quasi fugiat et illo ullam aliquid commodi minima consectetur. Dignissimos accusantium sint aliquid molestiae non veritatis eius cumque repellendus. Iste perferendis eos maiores et nisi. Repudiandae molestias id voluptas nesciunt illo, odit, suscipit impedit, culpa quidem vel adipisci quasi unde.</p>
@@ -157,19 +204,19 @@ function App() {
           className="mySwiper"
         >
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+            <img alt="..." src="https://swiperjs.com/demos/images/nature-1.jpg" />
             <h6>დღე პირველი</h6>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            <img alt="..." src="https://swiperjs.com/demos/images/nature-2.jpg" />
             <h6>დღე მეორე</h6>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            <img alt="..." src="https://swiperjs.com/demos/images/nature-2.jpg" />
             <h6>დღე mesame</h6>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            <img alt="..." src="https://swiperjs.com/demos/images/nature-2.jpg" />
             <h6>დღე meotxe</h6>
           </SwiperSlide>
         </Swiper>
@@ -186,7 +233,7 @@ function App() {
             <Carousel.Item>
               <div style={{ backgroundColor: 'red', width: '100%', height: 400 }}></div>
               <Carousel.Caption>
-                <img src="https://placehold.co/150" style={{ borderRadius: '50%' }} />
+                <img alt="..." src="https://placehold.co/150" style={{ borderRadius: '50%' }} />
                 <h3>First slide label</h3>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
               </Carousel.Caption>
