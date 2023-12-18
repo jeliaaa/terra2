@@ -19,6 +19,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-scroll";
 import { useEffect } from "react";
 import ReactPlayer from "react-player";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
 function App() {
   const { t } = useTranslation();
   const Scroll = require("react-scroll");
@@ -64,8 +69,8 @@ function App() {
                 <Link className="nav-link navLinks" to="about">
                   {t('about')}
                 </Link>
-                <Link className="nav-link navLinks" to="info">
-                  {t('project')}
+                <Link className="nav-link navLinks" to="projectProgress">
+                  {t('projectProgress')}
                 </Link>
                 <Link className="nav-link navLinks" to="team">
                   {t('team')}
@@ -90,25 +95,60 @@ function App() {
           <img src="https://picsum.photos/800" alt="..." />
         </div>
       </Scroll.Element>
-      <Scroll.Element name="info" className="info">
-        <ReactPlayer controls url={'https://youtu.be/DeumyOzKqgI?si=I8C-HXa0AmPkhofN'} />
+      <Scroll.Element name="projectProgress" className="info">
+        <Swiper
+          effect={'coverflow'}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={'auto'}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          pagination={true}
+          modules={[EffectCoverflow, Pagination]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+            <h6>დღე პირველი</h6>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            <h6>დღე მეორე</h6>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            <h6>დღე mesame</h6>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            <h6>დღე meotxe</h6>
+          </SwiperSlide>
+        </Swiper>
+
+        {/* <ReactPlayer controls url={'https://youtu.be/DeumyOzKqgI?si=I8C-HXa0AmPkhofN'} /> */}
       </Scroll.Element>
-      <Scroll.Element name="team" className="team" style={{backgroundColor:'red', padding:20}}>
+      <Scroll.Element>
+        
+      </Scroll.Element>
+      <Scroll.Element name="team" className="team" style={{ backgroundColor: 'red', padding: 20 }}>
         <h2 className="mb-4">{t('team')}</h2>
-        <Carousel style={{width:'100%'}}>
+        <Carousel style={{ width: '100%' }}>
           {teamMembers.map((member) => (
             <Carousel.Item>
-              <div style={{backgroundColor:'red', width:'100%', height:400}}></div>
+              <div style={{ backgroundColor: 'red', width: '100%', height: 400 }}></div>
               <Carousel.Caption>
-                <img src="https://placehold.co/150" style={{borderRadius:'50%'}} />
+                <img src="https://placehold.co/150" style={{ borderRadius: '50%' }} />
                 <h3>First slide label</h3>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
               </Carousel.Caption>
             </Carousel.Item>
           ))}
-
         </Carousel>
-
       </Scroll.Element>
     </div>
   );
