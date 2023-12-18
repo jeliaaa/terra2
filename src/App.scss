@@ -139,8 +139,11 @@
   }
   .img_wrap{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    row-gap: 15px;
+    flex-direction: column;
+    .two, .three{
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
   }
 }

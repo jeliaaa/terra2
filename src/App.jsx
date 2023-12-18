@@ -69,6 +69,9 @@ function App() {
                 <Link className="nav-link navLinks" to="about">
                   {t('about')}
                 </Link>
+                <Link className="nav-link navLinks" to="teamVision">
+                  {t('teamVision')}
+                </Link>
                 <Link className="nav-link navLinks" to="projectInfo">
                   {t('projectInfo')}
                 </Link>
@@ -104,9 +107,21 @@ function App() {
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ullam alias officia non expedita rerum nihil veritatis consequatur quos porro? Minus eaque excepturi culpa aspernatur amet maiores possimus cumque accusamus dolore alias obcaecati ipsum, error ut quia est perspiciatis. Delectus praesentium ipsam sint, dignissimos laboriosam optio? Odit cum doloremque dolores iure ullam possimus quibusdam! Voluptatum, minus est vitae quaerat quas quasi fugiat et illo ullam aliquid commodi minima consectetur. Dignissimos accusantium sint aliquid molestiae non veritatis eius cumque repellendus. Iste perferendis eos maiores et nisi. Repudiandae molestias id voluptas nesciunt illo, odit, suscipit impedit, culpa quidem vel adipisci quasi unde.</p>
         </div>
         <div className="img_wrap">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((id) => (
-            <img src='https://picsum.photos/100' alt={id} style={{ borderRadius: '50%' }} />
-          ))}
+          <div className="three">
+            {[1, 2, 3].map((id) => (
+              <img src='https://picsum.photos/100' alt={id} style={{ borderRadius: '50%' }} />
+            ))}
+          </div>
+          <div className="two">
+            {[1, 2].map((id) => (
+              <img src='https://picsum.photos/100' alt={id} style={{ borderRadius: '50%' }} />
+            ))}
+          </div>
+          <div className="three">
+            {[1, 2, 3].map((id) => (
+              <img src='https://picsum.photos/100' alt={id} style={{ borderRadius: '50%' }} />
+            ))}
+          </div>
         </div>
         <div className="text_wrap">
           <h2>Visions</h2>
