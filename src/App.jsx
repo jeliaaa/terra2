@@ -69,6 +69,9 @@ function App() {
                 <Link className="nav-link navLinks" to="about">
                   {t('about')}
                 </Link>
+                <Link className="nav-link navLinks" to="projectInfo">
+                  {t('projectInfo')}
+                </Link>
                 <Link className="nav-link navLinks" to="projectProgress">
                   {t('projectProgress')}
                 </Link>
@@ -93,6 +96,32 @@ function App() {
         </div>
         <div className="img_wrap">
           <img src="https://picsum.photos/800" alt="..." />
+        </div>
+      </Scroll.Element>
+      <Scroll.Element name="teamVision" className="teamVision" style={{ backgroundColor: 'darkviolet' }}>
+        <div className="text_wrap">
+          <h2>Missions</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ullam alias officia non expedita rerum nihil veritatis consequatur quos porro? Minus eaque excepturi culpa aspernatur amet maiores possimus cumque accusamus dolore alias obcaecati ipsum, error ut quia est perspiciatis. Delectus praesentium ipsam sint, dignissimos laboriosam optio? Odit cum doloremque dolores iure ullam possimus quibusdam! Voluptatum, minus est vitae quaerat quas quasi fugiat et illo ullam aliquid commodi minima consectetur. Dignissimos accusantium sint aliquid molestiae non veritatis eius cumque repellendus. Iste perferendis eos maiores et nisi. Repudiandae molestias id voluptas nesciunt illo, odit, suscipit impedit, culpa quidem vel adipisci quasi unde.</p>
+        </div>
+        <div className="img_wrap">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((id) => (
+            <img src='https://picsum.photos/100' alt={id} style={{ borderRadius: '50%' }} />
+          ))}
+        </div>
+        <div className="text_wrap">
+          <h2>Visions</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ullam alias officia non expedita rerum nihil veritatis consequatur quos porro? Minus eaque excepturi culpa aspernatur amet maiores possimus cumque accusamus dolore alias obcaecati ipsum, error ut quia est perspiciatis. Delectus praesentium ipsam sint, dignissimos laboriosam optio? Odit cum doloremque dolores iure ullam possimus quibusdam! Voluptatum, minus est vitae quaerat quas quasi fugiat et illo ullam aliquid commodi minima consectetur. Dignissimos accusantium sint aliquid molestiae non veritatis eius cumque repellendus. Iste perferendis eos maiores et nisi. Repudiandae molestias id voluptas nesciunt illo, odit, suscipit impedit, culpa quidem vel adipisci quasi unde.</p>
+        </div>
+      </Scroll.Element>
+      <Scroll.Element name="projectInfo" className="about" style={{ backgroundColor: 'antiquewhite' }}>
+        <div className="img_wrap">
+          <h2>{t('projectInfo')}</h2>
+          <hr className="mb-5 mt-5" />
+          <img src="https://picsum.photos/800" alt="..." />
+        </div>
+        <div className="text_wrap">
+
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ullam alias officia non expedita rerum nihil veritatis consequatur quos porro? Minus eaque excepturi culpa aspernatur amet maiores possimus cumque accusamus dolore alias obcaecati ipsum, error ut quia est perspiciatis. Delectus praesentium ipsam sint, dignissimos laboriosam optio? Odit cum doloremque dolores iure ullam possimus quibusdam! Voluptatum, minus est vitae quaerat quas quasi fugiat et illo ullam aliquid commodi minima consectetur. Dignissimos accusantium sint aliquid molestiae non veritatis eius cumque repellendus. Iste perferendis eos maiores et nisi. Repudiandae molestias id voluptas nesciunt illo, odit, suscipit impedit, culpa quidem vel adipisci quasi unde.</p>
         </div>
       </Scroll.Element>
       <Scroll.Element name="projectProgress" className="info">
@@ -133,7 +162,7 @@ function App() {
         {/* <ReactPlayer controls url={'https://youtu.be/DeumyOzKqgI?si=I8C-HXa0AmPkhofN'} /> */}
       </Scroll.Element>
       <Scroll.Element>
-        
+
       </Scroll.Element>
       <Scroll.Element name="team" className="team" style={{ backgroundColor: 'red', padding: 20 }}>
         <h2 className="mb-4">{t('team')}</h2>
