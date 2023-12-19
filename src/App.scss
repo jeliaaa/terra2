@@ -260,3 +260,13 @@
   position: absolute;
   left: 0;
 }
+.graph{
+  position: relative;
+  .btnImg{
+    position: absolute;
+    width: 50% !important;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+  }
+}

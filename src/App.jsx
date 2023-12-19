@@ -4,7 +4,8 @@ import { useTranslation } from "react-i18next";
 import '../src/patrick-hendry-asHMHLCdv7M-unsplash.jpg'
 import team from '../src/343935063_1061082471946518_1424884706702797220_n (1).jpg'
 import map from '../src/background.png'
-import details from '../src/Рисунок6.png'
+import buttonImg from './assets/imgOfGraph2.png'
+import circleImg from './assets/imgOfGraph.png'
 import {
   Carousel,
   Container,
@@ -14,7 +15,7 @@ import {
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-scroll";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -24,9 +25,7 @@ function App() {
   const { t } = useTranslation();
   const Scroll = require("react-scroll");
   const scroll = Scroll.animateScroll;
-  useEffect(() => {
-    scroll.scrollToTop();
-  });
+
   const teamMembers = [
     {
       id: 1,
@@ -42,6 +41,15 @@ function App() {
     },
     // Add more team members as needed
   ];
+  let [deg, setDeg] = useState(0);
+  const setDegrees = () => {
+    if (deg >= 355) {
+      setDeg(0);
+    } else {
+      setDeg(deg += 51.5);
+    }
+    console.log(deg);
+  }
   return (
     <div className="App">
       <Navbar key={"lg"} expand={"lg"} className="nav">
@@ -96,7 +104,7 @@ function App() {
       </Navbar>
       <div className="main">
         <div className="mainHero">
-          <h2>კეთილი იყოს თქვენი მობრძანება TerraTech ის პროექტში - <br/>რობოტი მაღაროელი და ჭკვიანი უნიფორმა</h2>
+          <h2>კეთილი იყოს თქვენი მობრძანება TerraTech ის პროექტში - <br />რობოტი მაღაროელი და ჭკვიანი უნიფორმა</h2>
           <Link to="about"><button>{t('seeMore')}</button></Link>
         </div>
       </div>
@@ -113,8 +121,8 @@ function App() {
       <Scroll.Element name="teamVision" className="teamVision" style={{ backgroundColor: 'darkviolet' }}>
         <h1 className="mission-header">გუნდის მიზანი</h1>
         <div className="text_wrap">
-          <p>TerraTech-ის მიზანია რევოლუცია მოვახდინოთ სამთო ინდუსტრიაში ინოვაციური გადაწყვეტილებების საშუალებით, რომლის პრიორიტეტია უსაფრთხოება, ეფექტურობა და მდგრადობა. 
-ჩვენი მისიაა შევამსუბუქოთ ის გამოწვევები, რომელთა წინაშეც დგას საქართველოს სამთო სექტორი უახლესი ტექნოლოგიების დანერგვით, რომლებიც აძლიერებენ საოპერაციო სტანდარტებს და იცავენ მაღაროელების კეთილდღეობას. </p>
+          <p>TerraTech-ის მიზანია რევოლუცია მოვახდინოთ სამთო ინდუსტრიაში ინოვაციური გადაწყვეტილებების საშუალებით, რომლის პრიორიტეტია უსაფრთხოება, ეფექტურობა და მდგრადობა.
+            ჩვენი მისიაა შევამსუბუქოთ ის გამოწვევები, რომელთა წინაშეც დგას საქართველოს სამთო სექტორი უახლესი ტექნოლოგიების დანერგვით, რომლებიც აძლიერებენ საოპერაციო სტანდარტებს და იცავენ მაღაროელების კეთილდღეობას. </p>
         </div>
         <div className="img_wrap">
           <div className="three">
@@ -136,7 +144,7 @@ function App() {
         <img src={map} alt="" />
         <div className="text_wrap">
           <p>TerraTech შედგება ერთგული მეგობრებისაგან. ჩვენი მრავალფეროვანი გუნდი აერთიანებს უამრავ უნარებსა და გამოცდილებას, რომელიც ქმნის გარემოს სადაც კოლექტიური გარემო ხელს უწყობს ინოვაციურ წინსვლას.
-</p>
+          </p>
         </div>
       </Scroll.Element>
 
@@ -145,18 +153,18 @@ function App() {
         <hr />
         <div className="video_wrap">
           <h4>რობოტი მაღაროელი</h4>
-          <iframe className="video-robot" src="https://drive.google.com/file/d/1PhDKUUXOUA5YAyk58pAUK6r9CTHqdoTc/preview" width="95%" height="280" allow="autoplay"></iframe>
+          <div style={{ width: '95%', height: 280 }}></div>
         </div>
 
         <div className="text_wrap">
-              <p>ჩვენი რობოტი მაქსიმალურად ურუნველყოფს მაღაროში სახიფათო გარემოს განეიტრალებასა და კავშირის დამყარებას სამონიტორინგო სისტემასთან. რობოტის ყველაზე მნიშვნელოვანი ფუნქციაა მომუშავე პერსონალის ჯანმრთელობისა და უსაფრთხოების მონაცემების შეგროვება,  რომელზეც მუდმივი წვდომა აქვს სამონიტორინგო სამსახურს. აღსანიშნავია, რომ ჩვენი რობოტი მოსალოდნელ საშიშროებას აფიქსირებს რამაც შესაძლოა მაღაროელის სიცოცხლე გადაარჩინოს. გარდა ამისა რობოტის ფუნქციონალში შედის: <br />
-              <br/>1)	მავნე აირების დაფიქსირებას და ფილტრაცია
-              <br/>2)	სამუშაოს დამოუკიდებლად  განხორციელება
-              <br/>3)	3D რუკის შექმნა 
-              <br/>4)	ჭკვიანი სავენტილაციო სისტემასთან კავშირი
-              <br/>5)	თვითდატენვა</p>
+          <p>ჩვენი რობოტი მაქსიმალურად ურუნველყოფს მაღაროში სახიფათო გარემოს განეიტრალებასა და კავშირის დამყარებას სამონიტორინგო სისტემასთან. რობოტის ყველაზე მნიშვნელოვანი ფუნქციაა მომუშავე პერსონალის ჯანმრთელობისა და უსაფრთხოების მონაცემების შეგროვება,  რომელზეც მუდმივი წვდომა აქვს სამონიტორინგო სამსახურს. აღსანიშნავია, რომ ჩვენი რობოტი მოსალოდნელ საშიშროებას აფიქსირებს რამაც შესაძლოა მაღაროელის სიცოცხლე გადაარჩინოს. გარდა ამისა რობოტის ფუნქციონალში შედის: <br />
+            <br />1)	მავნე აირების დაფიქსირებას და ფილტრაცია
+            <br />2)	სამუშაოს დამოუკიდებლად  განხორციელება
+            <br />3)	3D რუკის შექმნა
+            <br />4)	ჭკვიანი სავენტილაციო სისტემასთან კავშირი
+            <br />5)	თვითდატენვა</p>
         </div>
-        
+
         <div className="block">
           <Carousel interval={1000} style={{ width: '100%' }}>
             {[1, 2, 3].map((member) => (
@@ -165,7 +173,7 @@ function App() {
               </Carousel.Item>
             ))}
           </Carousel>
-          </div>
+        </div>
         <hr />
         <div className="block">
           <h4>Smart Uniform</h4>
@@ -179,7 +187,7 @@ function App() {
           <div className="text_wrap">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit quos voluptates nulla nostrum quisquam ratione at corporis mollitia expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. In libero dolorum beatae corrupti laudantium odio ipsa, cum repudiandae quo exercitationem aliquam sed. Numquam eaque quisquam quae tenetur nesciunt odit blanditiis!</p>
           </div>
-          <iframe src="https://drive.google.com/file/d/1PhDKUUXOUA5YAyk58pAUK6r9CTHqdoTc/preview" width="95%" height="280" allow="autoplay"></iframe>
+          <div style={{ width: '95%', height: 280 }} ></div>
         </div>
         <hr />
         <div className="block">
@@ -187,7 +195,7 @@ function App() {
           <div className="text_wrap">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit quos voluptates nulla nostrum quisquam ratione at corporis mollitia expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. In libero dolorum beatae corrupti laudantium odio ipsa, cum repudiandae quo exercitationem aliquam sed. Numquam eaque quisquam quae tenetur nesciunt odit blanditiis!</p>
           </div>
-          <iframe src="https://drive.google.com/file/d/1PhDKUUXOUA5YAyk58pAUK6r9CTHqdoTc/preview" width="95%" height="280" allow="autoplay"></iframe>
+          <div style={{ width: '95%', height: 280 }} ></div>
         </div>
         <hr />
         <div className="block">
@@ -195,15 +203,18 @@ function App() {
           <div className="text_wrap">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit quos voluptates nulla nostrum quisquam ratione at corporis mollitia expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. In libero dolorum beatae corrupti laudantium odio ipsa, cum repudiandae quo exercitationem aliquam sed. Numquam eaque quisquam quae tenetur nesciunt odit blanditiis!</p>
           </div>
-          <iframe src="https://drive.google.com/file/d/1PhDKUUXOUA5YAyk58pAUK6r9CTHqdoTc/preview" width="95%" height="280" allow="autoplay"></iframe>
+          <div style={{ width: '95%', height: 280 }} ></div>
         </div>
       </Scroll.Element>
       <Scroll.Element name="projectInfo" className="about" style={{ backgroundColor: 'antiquewhite' }}>
         <div className="img_wrap">
           <h2>{t('projectInfo')}</h2>
           <hr />
-          <img src={details} alt="" />
-              <table>
+          <div className="graph">
+            <img style={{ zIndex: 100, cursor:'pointer' }} onClick={() => setDegrees()} className="btnImg" src={buttonImg} alt="..." />
+            <img style={{ transform: `rotate(${deg}deg)`, zIndex: '-2' }} className="circleImg" src={circleImg} alt="..." />
+          </div>
+          <table>
             <thead>
               <tr>
                 გამოყენებული კომპონენტები
@@ -214,7 +225,7 @@ function App() {
                 <td>რასბერი პი</td>
                 <td>
                   <div >
-                    <img src={team} alt="" style={{ height: '50px', width: '100px', background: '#3498db' }}/>
+                    <img src={team} alt="" style={{ height: '50px', width: '100px', background: '#3498db' }} />
                   </div>
                 </td>
               </tr>
@@ -320,7 +331,7 @@ function App() {
           <a key={e} href={`https://${e}.com`} className="partner">
             <p>{e}</p>
             <img src="https://picsum.photos/100" alt="..." />
-            
+
           </a>
         ))}
       </Scroll.Element>
