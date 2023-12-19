@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import '../src/patrick-hendry-asHMHLCdv7M-unsplash.jpg'
 import team from '../src/343935063_1061082471946518_1424884706702797220_n (1).jpg'
 import map from '../src/background.png'
+import details from '../src/Рисунок6.png'
 import {
   Carousel,
   Container,
@@ -140,27 +141,31 @@ function App() {
       </Scroll.Element>
 
       <Scroll.Element name="overview" className="overview">
-        <h1>Project overview</h1>
+        <h1>პროექტის მიმოხილვა</h1>
         <hr />
         <div className="video_wrap">
-          <h4>Introduction to Project</h4>
-          <iframe src="https://drive.google.com/file/d/1PhDKUUXOUA5YAyk58pAUK6r9CTHqdoTc/preview" width="95%" height="280" allow="autoplay"></iframe>
+          <h4>რობოტი მაღაროელი</h4>
+          <iframe className="video-robot" src="https://drive.google.com/file/d/1PhDKUUXOUA5YAyk58pAUK6r9CTHqdoTc/preview" width="95%" height="280" allow="autoplay"></iframe>
         </div>
-        <hr />
+
+        <div className="text_wrap">
+              <p>ჩვენი რობოტი მაქსიმალურად ურუნველყოფს მაღაროში სახიფათო გარემოს განეიტრალებასა და კავშირის დამყარებას სამონიტორინგო სისტემასთან. რობოტის ყველაზე მნიშვნელოვანი ფუნქციაა მომუშავე პერსონალის ჯანმრთელობისა და უსაფრთხოების მონაცემების შეგროვება,  რომელზეც მუდმივი წვდომა აქვს სამონიტორინგო სამსახურს. აღსანიშნავია, რომ ჩვენი რობოტი მოსალოდნელ საშიშროებას აფიქსირებს რამაც შესაძლოა მაღაროელის სიცოცხლე გადაარჩინოს. გარდა ამისა რობოტის ფუნქციონალში შედის: <br />
+              <br/>1)	მავნე აირების დაფიქსირებას და ფილტრაცია
+              <br/>2)	სამუშაოს დამოუკიდებლად  განხორციელება
+              <br/>3)	3D რუკის შექმნა 
+              <br/>4)	ჭკვიანი სავენტილაციო სისტემასთან კავშირი
+              <br/>5)	თვითდატენვა</p>
+        </div>
+        
         <div className="block">
-          <h4>Robot Miner</h4>
-          <Carousel interval={500} style={{ width: '100%' }}>
+          <Carousel interval={1000} style={{ width: '100%' }}>
             {[1, 2, 3].map((member) => (
               <Carousel.Item>
                 <img style={{ width: '100%' }} src="https://picsum.photos/200" alt="..." />
               </Carousel.Item>
             ))}
           </Carousel>
-          <div className="text_wrap">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit quos voluptates nulla nostrum quisquam ratione at corporis mollitia expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. In libero dolorum beatae corrupti laudantium odio ipsa, cum repudiandae quo exercitationem aliquam sed. Numquam eaque quisquam quae tenetur nesciunt odit blanditiis!</p>
           </div>
-          <iframe src="https://drive.google.com/file/d/1PhDKUUXOUA5YAyk58pAUK6r9CTHqdoTc/preview" width="95%" height="280" allow="autoplay"></iframe>
-        </div>
         <hr />
         <div className="block">
           <h4>Smart Uniform</h4>
@@ -196,12 +201,36 @@ function App() {
       <Scroll.Element name="projectInfo" className="about" style={{ backgroundColor: 'antiquewhite' }}>
         <div className="img_wrap">
           <h2>{t('projectInfo')}</h2>
-          <hr className="mb-5 mt-5" />
-          <img src="https://picsum.photos/800" alt="..." />
-        </div>
-        <div className="text_wrap">
-
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ullam alias officia non expedita rerum nihil veritatis consequatur quos porro? Minus eaque excepturi culpa aspernatur amet maiores possimus cumque accusamus dolore alias obcaecati ipsum, error ut quia est perspiciatis. Delectus praesentium ipsam sint, dignissimos laboriosam optio? Odit cum doloremque dolores iure ullam possimus quibusdam! Voluptatum, minus est vitae quaerat quas quasi fugiat et illo ullam aliquid commodi minima consectetur. Dignissimos accusantium sint aliquid molestiae non veritatis eius cumque repellendus. Iste perferendis eos maiores et nisi. Repudiandae molestias id voluptas nesciunt illo, odit, suscipit impedit, culpa quidem vel adipisci quasi unde.</p>
+          <hr />
+          <img src={details} alt="" />
+              <table>
+            <thead>
+              <tr>
+                გამოყენებული კომპონენტები
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>რასბერი პი</td>
+                <td>
+                  <div >
+                    <img src={team} alt="" style={{ height: '50px', width: '100px', background: '#3498db' }}/>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Category 2</td>
+                <td>
+                  {/* Replace 'image-url.jpg' with the actual URL of your image */}
+                  <img
+                    src="image-url.jpg"
+                    alt="Category 2 Graph"
+                    style={{ height: '100px' }}
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </Scroll.Element>
       <Scroll.Element name="projectProgress" className="info">
