@@ -143,11 +143,14 @@
 
 
   .text_wrap {
+    margin-top: 15px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     background-color: white;
     padding: 15px;
     border-radius: 10px;
   }
+
+
 
   .img_wrap {
     display: flex;
@@ -176,6 +179,7 @@
   padding: 20px;
   background-color: darkslateblue;
   color: white;
+  gap: 20px;
 
   h1{
     text-align: center;
@@ -187,6 +191,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 10px;
   }
 
   .text_wrap {
@@ -195,13 +200,14 @@
     padding: 10px;
     background-color: white;
     color: black !important;
-    margin-bottom: 15px;
+    border-top: 1px solid ;
   }
 
   .block {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
 }
 
