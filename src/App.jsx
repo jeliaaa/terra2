@@ -1,6 +1,9 @@
 import "./App.scss";
 import "./i18n";
 import { useTranslation } from "react-i18next";
+import '../src/patrick-hendry-asHMHLCdv7M-unsplash.jpg'
+import team from '../src/343935063_1061082471946518_1424884706702797220_n (1).jpg'
+import map from '../src/background.png'
 import {
   Carousel,
   Container,
@@ -92,19 +95,50 @@ function App() {
       </Navbar>
       <div className="main">
         <div className="mainHero">
-          <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, omnis!</h2>
+          <h2>კეთილი იყოს თქვენი მობრძანება TerraTech ის პროექტში - <br/>რობოტი მაღაროელი და ჭკვიანი უნიფორმა</h2>
           <Link to="about"><button>{t('seeMore')}</button></Link>
         </div>
       </div>
       <Scroll.Element name="about" className="about">
         <div className="text_wrap">
-          <h2>{t('about')}</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ullam alias officia non expedita rerum nihil veritatis consequatur quos porro? Minus eaque excepturi culpa aspernatur amet maiores possimus cumque accusamus dolore alias obcaecati ipsum, error ut quia est perspiciatis. Delectus praesentium ipsam sint, dignissimos laboriosam optio? Odit cum doloremque dolores iure ullam possimus quibusdam! Voluptatum, minus est vitae quaerat quas quasi fugiat et illo ullam aliquid commodi minima consectetur. Dignissimos accusantium sint aliquid molestiae non veritatis eius cumque repellendus. Iste perferendis eos maiores et nisi. Repudiandae molestias id voluptas nesciunt illo, odit, suscipit impedit, culpa quidem vel adipisci quasi unde.</p>
+          <h2 className="about-header">{t('about')}</h2>
+          <p>კეთილი იყოს თქვენი მობრძანება TerraTech-ში, ხუთკაციან გუნდში საქართველოდან, რომლებიც არიან სამთო ინდუსტრიის ყველაზე მასშტაბური პროექტის შემქმნელები. ჩვენი ინოვაცია შეიცავს რობოტ მაღაროელს, ჭკვიან უნიფორმას და ყოვლისმომცველ ჭკვიან სამონიტორინგო და სავენტილაციო სისტემას. ჩვენი მთავარი მიზანია შევქმნათ უსაფრთხო და მაღალ-ტექნოლოგიური გარემო საქართველოს მაღაროებში. TerraTech ის მრავალფეროვანი გუნდი თავდაუზოგავად შრომობს და თითოეულ წევრს აქვს უნიკალური უნარები რათა დღევანდელი სამწუხარო რეალობა სამუდამოდ შეიცვალოს. ჩვენი პროექტი არის პასუხი, ცნობილ ტრაგედიებსა და გამოწვევებს ქართულ სამთო სფეროში, რომელიც ეძღვნება ინდუსტრიის პრობლემების მოგვარებას და შერბილებას. შემოგვიერთდით სამთო მომავლის ფორმირებაში - სადაც მიწა და ტექნოლოგია ერთმანეთს ერწყმის და შეიქმნება გადაწყვეტილება, რომელიც მსოფლიოზე ხანგრძლივ გავლენას მოახდენს. </p>
         </div>
         <div className="img_wrap">
-          <img src="https://picsum.photos/800" alt="..." />
+          <img src={team} alt="..." />
         </div>
       </Scroll.Element>
+
+      <Scroll.Element name="teamVision" className="teamVision" style={{ backgroundColor: 'darkviolet' }}>
+        <h1 className="mission-header">გუნდის მიზანი</h1>
+        <div className="text_wrap">
+          <p>TerraTech-ის მიზანია რევოლუცია მოვახდინოთ სამთო ინდუსტრიაში ინოვაციური გადაწყვეტილებების საშუალებით, რომლის პრიორიტეტია უსაფრთხოება, ეფექტურობა და მდგრადობა. 
+ჩვენი მისიაა შევამსუბუქოთ ის გამოწვევები, რომელთა წინაშეც დგას საქართველოს სამთო სექტორი უახლესი ტექნოლოგიების დანერგვით, რომლებიც აძლიერებენ საოპერაციო სტანდარტებს და იცავენ მაღაროელების კეთილდღეობას. </p>
+        </div>
+        <div className="img_wrap">
+          <div className="three">
+            {[1, 2, 3].map((id) => (
+              <img src='https://picsum.photos/100' alt={id} style={{ borderRadius: '50%' }} />
+            ))}
+          </div>
+          <div className="two">
+            {[1, 2].map((id) => (
+              <img src='https://picsum.photos/100' alt={id} style={{ borderRadius: '50%' }} />
+            ))}
+          </div>
+        </div>
+      </Scroll.Element>
+
+      <Scroll.Element name="teamVision" className="teamVision" style={{ backgroundColor: 'darkviolet' }}>
+        <h1 className="mission-header">გუნდის წარმომავლობა</h1>
+
+        <img src={map} alt="" />
+        <div className="text_wrap">
+          <p>TerraTech შედგება ერთგული მეგობრებისაგან. ჩვენი მრავალფეროვანი გუნდი აერთიანებს უამრავ უნარებსა და გამოცდილებას, რომელიც ქმნის გარემოს სადაც კოლექტიური გარემო ხელს უწყობს ინოვაციურ წინსვლას.
+</p>
+        </div>
+      </Scroll.Element>
+
       <Scroll.Element name="overview" className="overview">
         <h1>Project overview</h1>
         <hr />
@@ -157,34 +191,6 @@ function App() {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit quos voluptates nulla nostrum quisquam ratione at corporis mollitia expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. In libero dolorum beatae corrupti laudantium odio ipsa, cum repudiandae quo exercitationem aliquam sed. Numquam eaque quisquam quae tenetur nesciunt odit blanditiis!</p>
           </div>
           <iframe src="https://drive.google.com/file/d/1PhDKUUXOUA5YAyk58pAUK6r9CTHqdoTc/preview" width="95%" height="280" allow="autoplay"></iframe>
-        </div>
-      </Scroll.Element>
-      <Scroll.Element name="teamVision" className="teamVision" style={{ backgroundColor: 'darkviolet' }}>
-        <h1>Team missions and visions</h1>
-        <div className="text_wrap">
-          <h2>Missions</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ullam alias officia non expedita rerum nihil veritatis consequatur quos porro? Minus eaque excepturi culpa aspernatur amet maiores possimus cumque accusamus dolore alias obcaecati ipsum, error ut quia est perspiciatis. Delectus praesentium ipsam sint, dignissimos laboriosam optio? Odit cum doloremque dolores iure ullam possimus quibusdam! Voluptatum, minus est vitae quaerat quas quasi fugiat et illo ullam aliquid commodi minima consectetur. Dignissimos accusantium sint aliquid molestiae non veritatis eius cumque repellendus. Iste perferendis eos maiores et nisi. Repudiandae molestias id voluptas nesciunt illo, odit, suscipit impedit, culpa quidem vel adipisci quasi unde.</p>
-        </div>
-        <div className="img_wrap">
-          <div className="three">
-            {[1, 2, 3].map((id) => (
-              <img src='https://picsum.photos/100' alt={id} style={{ borderRadius: '50%' }} />
-            ))}
-          </div>
-          <div className="two">
-            {[1, 2].map((id) => (
-              <img src='https://picsum.photos/100' alt={id} style={{ borderRadius: '50%' }} />
-            ))}
-          </div>
-          <div className="three">
-            {[1, 2, 3].map((id) => (
-              <img src='https://picsum.photos/100' alt={id} style={{ borderRadius: '50%' }} />
-            ))}
-          </div>
-        </div>
-        <div className="text_wrap">
-          <h2>Visions</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ullam alias officia non expedita rerum nihil veritatis consequatur quos porro? Minus eaque excepturi culpa aspernatur amet maiores possimus cumque accusamus dolore alias obcaecati ipsum, error ut quia est perspiciatis. Delectus praesentium ipsam sint, dignissimos laboriosam optio? Odit cum doloremque dolores iure ullam possimus quibusdam! Voluptatum, minus est vitae quaerat quas quasi fugiat et illo ullam aliquid commodi minima consectetur. Dignissimos accusantium sint aliquid molestiae non veritatis eius cumque repellendus. Iste perferendis eos maiores et nisi. Repudiandae molestias id voluptas nesciunt illo, odit, suscipit impedit, culpa quidem vel adipisci quasi unde.</p>
         </div>
       </Scroll.Element>
       <Scroll.Element name="projectInfo" className="about" style={{ backgroundColor: 'antiquewhite' }}>
