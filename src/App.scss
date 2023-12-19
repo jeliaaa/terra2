@@ -11,7 +11,7 @@
   }
 }
 
-.about-header{
+.about-header {
   text-align: center;
 }
 
@@ -65,7 +65,7 @@
 .main {
   background-image: url('../src/patrick-hendry-asHMHLCdv7M-unsplash.jpg');
   background-size: cover;
-  background-position: center; 
+  background-position: center;
   background-repeat: no-repeat;
   width: 100%;
   height: 90dvh;
@@ -115,17 +115,15 @@
 
 .swiper {
   width: 100%;
-  height: 200px;
+  height: 350px;
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: #007BFF;
 }
 
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 150px !important;
-  height: 150px !important;
+  width: 80% !important;
   text-align: center;
 }
 
@@ -135,7 +133,6 @@
 }
 
 .teamVision {
-  margin-top: 20px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -181,7 +178,7 @@
   color: white;
   gap: 20px;
 
-  h1{
+  h1 {
     text-align: center;
   }
 
@@ -200,7 +197,7 @@
     padding: 10px;
     background-color: white;
     color: black !important;
-    border-top: 1px solid ;
+    border-top: 1px solid;
   }
 
   .block {
@@ -234,7 +231,7 @@
   }
 }
 
-.mission-header{
+.mission-header {
   text-align: center;
   color: #FFF;
 }
@@ -260,13 +257,39 @@
   position: absolute;
   left: 0;
 }
-.graph{
+
+.graph {
   position: relative;
-  .btnImg{
+  overflow: hidden;
+
+  .btnImg {
     position: absolute;
     width: 50% !important;
     height: 50%;
     top: 25%;
     left: 25%;
+  }
+}
+
+.carousel-caption {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer {
+  height: 10dvh;
+  padding: 5px 0;
+  text-align: center;
+  background-color: gainsboro;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+  div{
+    height: 4dvh;
+    a{
+      text-decoration: none;
+    }
   }
 }

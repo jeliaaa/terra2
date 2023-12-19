@@ -17,10 +17,21 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-scroll";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
+import team1 from './assets/team/team1.png'
+import team2 from './assets/team/team2.png'
+import team3 from './assets/team/team3.png'
+import team4 from './assets/team/team4.png'
+import team5 from './assets/team/team5.png'
+import logo from './assets/logo.png'
+import raspberry from './assets/comps/rsapberry.webp'
+import remote from './assets/comps/remote.jpg'
+import motor from './assets/comps/motor.jpg'
+import ros from './assets/comps/ros.JPG'
+import esp from './assets/comps/esp32.jpg'
+
 function App() {
   const { t } = useTranslation();
   const Scroll = require("react-scroll");
@@ -29,18 +40,62 @@ function App() {
   const teamMembers = [
     {
       id: 1,
-      name: 'John Doe',
-      position: 'CEO',
+      name: 'დავით რუსია',
+      img: team1,
       bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
       id: 2,
-      name: 'Jane Smith',
-      position: 'CTO',
+      name: 'გიგი გამსახურდია',
+      img: team3,
+      bio: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    }, {
+      id: 3,
+      name: 'საბა ხაბურზანია',
+      img: team2,
+      bio: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    }, {
+      id: 4,
+      name: 'ლუკა კუკავა',
+      img: team4,
+      bio: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    }, {
+      id: 5,
+      name: 'თამარ გამგებელი',
+      img: team5,
       bio: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     },
     // Add more team members as needed
   ];
+
+  const comps = [
+    {
+      id : 1,
+      name : 'Raspberry Pi4',
+      img: raspberry
+    },
+    {
+      id : 2,
+      name : 'ROS 2-humble',
+      img: ros
+    },
+    {
+      id : 3,
+      name : 'ESP32',
+      img: esp
+    },
+    {
+      id : 4,
+      name : 'Flysky transmiiter and reciever',
+      img: remote
+    },
+    {
+      id : 5,
+      name : 'ერთი ცხენის ძალის მქონე ძრავი რეზინის მუხლუხოთი',
+      img: motor
+    },
+  ]
+
   let [deg, setDeg] = useState(0);
   const setDegrees = () => {
     if (deg >= 355) {
@@ -54,7 +109,8 @@ function App() {
     <div className="App">
       <Navbar key={"lg"} expand={"lg"} className="nav">
         <Container fluid>
-          <Link className="nav-link navLinks" onClick={() => scroll.scrollToTop()}>
+          <Link className="nav-link navLinks" style={{ paddingLeft: 0 }} onClick={() => scroll.scrollToTop()}>
+            <img src={logo} style={{ width: 50 }} alt="..." />
             <Navbar.Brand>TerraTech</Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
@@ -73,29 +129,23 @@ function App() {
                 <Link className="nav-link navLinks" to="about">
                   {t('about')}
                 </Link>
-                <Link className="nav-link navLinks" to="about">
-                  {t('overview')}
-                </Link>
                 <Link className="nav-link navLinks" to="teamVision">
-                  {t('teamVision')}
+                  გუნდის მიზანი
+                </Link>
+                <Link className="nav-link navLinks" to="overview">
+                  პეოექტის მიმოხილვა
                 </Link>
                 <Link className="nav-link navLinks" to="projectInfo">
-                  {t('projectInfo')}
+                  პროექტის ფუნქციონალი
                 </Link>
                 <Link className="nav-link navLinks" to="projectProgress">
-                  {t('projectProgress')}
+                  პროექტის პროგრესი
                 </Link>
-                <Link className="nav-link navLinks" to="team">
-                  {t('achievements')}
-                </Link>
-                <Link className="nav-link navLinks" to="team">
-                  {t('partners')}
+                <Link className="nav-link navLinks" to="specialThanks">
+                  განსაკუთრებული მადლობა
                 </Link>
                 <Link className="nav-link navLinks" to="team">
                   {t('team')}
-                </Link>
-                <Link className="nav-link navLinks" to="team">
-                  {t('contact')}
                 </Link>
               </Nav>
             </Offcanvas.Body>
@@ -153,7 +203,7 @@ function App() {
         <hr />
         <div className="video_wrap">
           <h4>რობოტი მაღაროელი</h4>
-          <div style={{ width: '95%', height: 280 }}></div>
+          <iframe width="95%" height="280" src="https://www.youtube.com/embed/DeumyOzKqgI?si=EBY9NbIZn6c2XhZn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
 
         <div className="text_wrap">
@@ -176,7 +226,7 @@ function App() {
         </div>
         <hr />
         <div className="block">
-          <h4>Smart Uniform</h4>
+          <h4>ჭკვიანი უნიფორმა</h4>
           <Carousel interval={500} style={{ width: '100%' }}>
             {[1, 2, 3].map((member) => (
               <Carousel.Item>
@@ -191,7 +241,7 @@ function App() {
         </div>
         <hr />
         <div className="block">
-          <h4>Smart Ventilation</h4>
+          <h4>ჭკვიანი ვენტილაცია</h4>
           <div className="text_wrap">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit quos voluptates nulla nostrum quisquam ratione at corporis mollitia expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. In libero dolorum beatae corrupti laudantium odio ipsa, cum repudiandae quo exercitationem aliquam sed. Numquam eaque quisquam quae tenetur nesciunt odit blanditiis!</p>
           </div>
@@ -199,7 +249,7 @@ function App() {
         </div>
         <hr />
         <div className="block">
-          <h4>Monitoring system</h4>
+          <h4>მონიტორინგის სისტემა</h4>
           <div className="text_wrap">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit quos voluptates nulla nostrum quisquam ratione at corporis mollitia expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. In libero dolorum beatae corrupti laudantium odio ipsa, cum repudiandae quo exercitationem aliquam sed. Numquam eaque quisquam quae tenetur nesciunt odit blanditiis!</p>
           </div>
@@ -208,83 +258,67 @@ function App() {
       </Scroll.Element>
       <Scroll.Element name="projectInfo" className="about" style={{ backgroundColor: 'antiquewhite' }}>
         <div className="img_wrap">
-          <h2>{t('projectInfo')}</h2>
-          <hr />
           <div className="graph">
-            <img style={{ zIndex: 100, cursor:'pointer' }} onClick={() => setDegrees()} className="btnImg" src={buttonImg} alt="..." />
+            <img style={{ zIndex: 100, cursor: 'pointer' }} onClick={() => setDegrees()} className="btnImg" src={buttonImg} alt="..." />
             <img style={{ transform: `rotate(${deg}deg)`, zIndex: '-2' }} className="circleImg" src={circleImg} alt="..." />
           </div>
-          <table>
-            <thead>
-              <tr>
-                გამოყენებული კომპონენტები
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>რასბერი პი</td>
-                <td>
-                  <div >
-                    <img src={team} alt="" style={{ height: '50px', width: '100px', background: '#3498db' }} />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>Category 2</td>
-                <td>
-                  {/* Replace 'image-url.jpg' with the actual URL of your image */}
-                  <img
-                    src="image-url.jpg"
-                    alt="Category 2 Graph"
-                    style={{ height: '100px' }}
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </Scroll.Element>
+      <Scroll.Element name="components" className="partners">
+        <h1>გამოყენებული კომპონენტები</h1>
+        <hr style={{ width: '100%' }} />
+        {comps.map((e) => (
+          <div key={e} className="partner">
+            <p>{e.name}</p>
+            <img style={{ borderRadius: '50%', width:100, height:100 }} src={e.img} alt="..." />
+          </div>
+        ))}
+      </Scroll.Element>
       <Scroll.Element name="projectProgress" className="info">
-        <h1 className="mb-3">Project Progress</h1>
+        <h1 className="mb-3">პროექტის განვითარება</h1>
         <hr />
         <Swiper
-          effect={'coverflow'}
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={'auto'}
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
+          direction={'vertical'}
+          pagination={{
+            clickable: true,
           }}
-          pagination={true}
-          modules={[EffectCoverflow, Pagination]}
+          modules={[Pagination]}
           className="mySwiper"
         >
           <SwiperSlide>
             <img alt="..." src="https://swiperjs.com/demos/images/nature-1.jpg" />
-            <h6>დღე პირველი</h6>
+            <h4>ajdakf</h4>
           </SwiperSlide>
           <SwiperSlide>
             <img alt="..." src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            <h6>დღე მეორე</h6>
+            <h4>ajdakf</h4>
           </SwiperSlide>
           <SwiperSlide>
             <img alt="..." src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            <h6>დღე mesame</h6>
+            <h4>ajdakf</h4>
           </SwiperSlide>
           <SwiperSlide>
             <img alt="..." src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            <h6>დღე meotxe</h6>
+            <h4>ajdakf</h4>
           </SwiperSlide>
         </Swiper>
 
         {/* <ReactPlayer controls url={'https://youtu.be/DeumyOzKqgI?si=I8C-HXa0AmPkhofN'} /> */}
       </Scroll.Element>
-      <Scroll.Element name="achievements" className="partners" style={{ backgroundColor: 'gold' }}>
-        <h1>Achievements</h1>
+      <Scroll.Element name="minerConsultation" className="about">
+        <div className="text_wrap">
+          <h2 className="about-header">კონსულტაცია</h2>
+          <ul style={{ listStyle: 'none' }}>
+            <li><i className="fa-solid fa-location-dot" style={{ color: "#EF8600" }}></i> საქართველოს ტექნიკური უნივერსიტეტი</li>
+            <li><i className="fa-solid fa-user" style={{ color: "#EF8600" }}></i> საქართველოს ტექნიკური უნივერსიტეტი</li>
+          </ul>
+        </div>
+        <div className="img_wrap">
+          <img src={team} alt="..." />
+        </div>
+      </Scroll.Element>
+      <Scroll.Element name="specialThanks" className="partners" style={{ backgroundColor: 'gold' }}>
+        <h1>განსაკუთრებული მადლობა</h1>
         <hr />
         <ul id="achievements">
           <li>Completed a challenging project ahead of schedule, exceeding expectations.</li>
@@ -299,16 +333,6 @@ function App() {
           <li>Completed [Number] hours of professional development training in [Specific Skill].</li>
         </ul>
       </Scroll.Element>
-      <Scroll.Element name="partners" className="partners">
-        <h1>Partners</h1>
-        <hr style={{ width: '100%' }} />
-        {[0, 1, 2, 3].map((e) => (
-          <div key={e} className="partner">
-            <p>Lorem ipsum dolor sit.</p>
-            <img src="https://picsum.photos/100" alt="..." />
-          </div>
-        ))}
-      </Scroll.Element>
       <Scroll.Element name="team" className="team" style={{ backgroundColor: 'red', padding: 20 }}>
         <h2 className="mb-4">{t('team')}</h2>
         <Carousel style={{ width: '100%' }}>
@@ -316,25 +340,31 @@ function App() {
             <Carousel.Item>
               <div style={{ backgroundColor: 'red', width: '100%', height: 400 }}></div>
               <Carousel.Caption>
-                <img alt="..." src="https://placehold.co/150" style={{ borderRadius: '50%' }} />
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <img alt="..." src={member.img} style={{ borderRadius: '50%' }} />
+                <h3>{member.name}</h3>
               </Carousel.Caption>
             </Carousel.Item>
           ))}
         </Carousel>
       </Scroll.Element>
-      <Scroll.Element name="contact" className="partners" style={{ backgroundColor: 'yellowgreen' }}>
-        <h1>Contact us</h1>
-        <hr />
-        {['instagram', 'facebook', 'telegram', 'linkedin'].map((e) => (
-          <a key={e} href={`https://${e}.com`} className="partner">
-            <p>{e}</p>
-            <img src="https://picsum.photos/100" alt="..." />
-
+      <footer >
+        <div>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+            Facebook
           </a>
-        ))}
-      </Scroll.Element>
+        </div>
+        <div>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+            YouTube
+          </a>
+        </div>
+        <div>
+          <a href="mailto:your-email@gmail.com">Gmail</a>
+        </div>
+        <div>
+          <span>Mobile: +1 (123) 456-7890</span>
+        </div>
+      </footer>
     </div>
   );
 }
