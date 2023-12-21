@@ -269,8 +269,10 @@
 
 .graph {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-
   .btnImg {
     position: absolute;
     width: 50% !important;
@@ -302,6 +304,8 @@ footer {
     a {
       text-decoration: none;
       color: white !important;
+      padding: 2px;
+      border: 1px solid white;
     }
   }
 }

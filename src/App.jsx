@@ -35,16 +35,25 @@ import circle1 from './assets/circle1.png'
 import circle2 from './assets/circle2.png'
 import circle3 from './assets/circle3.png'
 import circle4 from './assets/circle4.png'
+import circle5 from './assets/circle5.png'
 import visit1 from './assets/visit1.jpg'
 import visit3 from './assets/visit3.jpg'
-import visit4 from './assets/visit4.jpg'
+import visit2 from './assets/visit2.png'
+import visit5 from './assets/visit5.jpg'
+import cave1 from './assets/cave/1.jpg'
+import cave2 from './assets/cave/2.jpg'
+import cave3 from './assets/cave/3.jpg'
+import cave4 from './assets/cave/4.jpg'
+import cave5 from './assets/cave/5.jpg'
+
 
 function App() {
   const { t } = useTranslation();
   const Scroll = require("react-scroll");
   const scroll = Scroll.animateScroll;
   const circleImgsUp = [circle1, circle2, circle3];
-  const circleImgsDown = [circle3, circle4]
+  const circleImgsDown = [circle5, circle4];
+  const consultion = [cave1, cave2, cave3, cave4, cave5]
   const teamMembers = [
     {
       id: 1,
@@ -75,7 +84,7 @@ function App() {
     },
     // Add more team members as needed
   ];
-  const sliderVisit = [visit1, visit3, visit4]
+  const sliderVisit = [visit1, visit2, visit3, visit5]
   const comps = [
     {
       id: 1,
@@ -140,13 +149,10 @@ function App() {
                   გუნდის მიზანი
                 </Link>
                 <Link className="nav-link navLinks" to="overview">
-                  პეოექტის მიმოხილვა
+                  პროექტის მიმოხილვა
                 </Link>
                 <Link className="nav-link navLinks" to="projectInfo">
                   პროექტის ფუნქციონალი
-                </Link>
-                <Link className="nav-link navLinks" to="projectProgress">
-                  პროექტის პროგრესი
                 </Link>
                 <Link className="nav-link navLinks" to="specialThanks">
                   განსაკუთრებული მადლობა
@@ -207,11 +213,10 @@ function App() {
 
       <Scroll.Element name="overview" className="overview">
         <h1>პროექტის მიმოხილვა</h1>
-        <iframe width="95%" height="280" src="https://www.youtube.com/embed/YTkbug0QiAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="95%" height="280" src="https://www.youtube.com/embed/SiWEZiv0HP4?si=4UUKJylA01seoCMX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <hr />
         <div className="video_wrap">
           <h4>რობოტი მაღაროელი</h4>
-          <iframe width="95%" height="280" src="https://www.youtube.com/embed/SiWEZiv0HP4?si=4UUKJylA01seoCMX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
 
         <div className="text_wrap">
@@ -235,7 +240,7 @@ function App() {
           <Carousel interval={1000} style={{ width: '100%' }}>
             {sliderVisit.map((member) => (
               <Carousel.Item>
-                <img style={{ width: '100%', height:300 }} src={member} alt="..." />
+                <img style={{ width: '100%', height: 300 }} src={member} alt="..." />
               </Carousel.Item>
             ))}
           </Carousel>
@@ -243,12 +248,12 @@ function App() {
         <hr />
         <div className="block">
           <h4>ჭკვიანი უნიფორმა</h4>
+          <iframe width="95%" height="280" src="https://www.youtube.com/embed/XpTgFsk_dTs?si=RvNoLGF8_coXj2yh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           <div className="text_wrap">
             <p>
               ჭკვიანი უნიფორმა შედგება 4 კომპონენტისაგან: ჩაფხუტი, ტანსაცმელი, ქამარი და ფეხსაცმელი. უნიფორმა აგროვებს, მაღაროელების სასიცოცხლო მონაცემებს როგორიცაა: მათი წნევა, პულსი, ტემპერატურა და სხვა. იგი აგროვებს ინფორმაციას მათთან ახლო მდებარე აირებზე და გარემოზე, ხოლო საშიშროების შემთხვევაში ხმოვან სიგნალს გამოსცემს თვით მაღაროელისთვის და ასევე ატყობინებს სამონიტორინგო სისტემას. უნიფორმის საშუალებით შესაძლებელია თითოეული მაღაროელის ადგილმდებარეობის დადგენა რაც საშიშროების შემთხვევაში ადამიანის გადარჩენის შანსებს გაცილებით ზრდის. ყველა ზემოჩამოთვლილი მონაცემი ავტომატურად ისახება სამონიტორინგო სისტემაზე. უნიფორმის ერთერთი უნიკალური ფუნქცია არის სიარულისას ელექტროენერგიის გამომუშვება რაც  ზოგავს მაღაროს ელექტროენერგიის მოხმარებას. აქედან გამომდიანარე უნიფორმას შეუძლია თავისი თავი ამარაგოს უწყვეტი ელექტროენერგიით რაც მაღაროელებს შეუმსუბექბს თავიანთ სამუშაოს.
             </p>
           </div>
-          <iframe width="95%" height="280" src="https://www.youtube.com/embed/XpTgFsk_dTs?si=RvNoLGF8_coXj2yh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           <iframe width="95%" height="280" src="https://www.youtube.com/embed/uTkR5ew8-ZE?si=-_mohGnqP0g-VdC2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <hr />
@@ -275,12 +280,12 @@ function App() {
       <Scroll.Element name="projectInfo" className="about" style={{ backgroundColor: 'antiquewhite' }}>
         <div className="img_wrap">
           <div className="graph">
-            <div style={{ position: 'absolute', left: '41%', top: '60%', zIndex: 101, textAlign: 'center', fontSize: 'small', color: '#fff' }}>
-              <i class="fa-solid fa-rotate-right fa-2xl"></i>
+            <div style={{ marginTop: '30%', position: 'absolute', zIndex: 101, textAlign: 'center', fontSize: 'smaller', color: '#fff' }}>
+              <i class="fa-solid fa-rotate-right fa-xl"></i>
               <h5>შეეხეთ!</h5>
             </div>
             <img style={{ zIndex: 100, cursor: 'pointer' }} onClick={() => setDegrees()} className="btnImg" src={buttonImg} alt="..." />
-            <img style={{ transform: `rotate(${deg}deg)`, zIndex: '-2' }} className="circleImg" src={circleImg} alt="..." />
+            <img style={{ transform: `rotate(${deg}deg)`, zIndex: '2' }} className="circleImg" src={circleImg} alt="..." />
           </div>
         </div>
       </Scroll.Element>
@@ -294,37 +299,7 @@ function App() {
           </div>
         ))}
       </Scroll.Element>
-      <Scroll.Element name="projectProgress" className="info">
-        <h1 className="mb-3">პროექტის განვითარება</h1>
-        <hr />
-        <Swiper
-          direction={'vertical'}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          className="mySwiper"
-        >
-          <SwiperSlide>
-            <img alt="..." src="https://swiperjs.com/demos/images/nature-1.jpg" />
-            <h4>ajdakf</h4>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img alt="..." src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            <h4>ajdakf</h4>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img alt="..." src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            <h4>ajdakf</h4>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img alt="..." src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            <h4>ajdakf</h4>
-          </SwiperSlide>
-        </Swiper>
 
-        {/* <ReactPlayer controls url={'https://youtu.be/DeumyOzKqgI?si=I8C-HXa0AmPkhofN'} /> */}
-      </Scroll.Element>
       <Scroll.Element name="minerConsultation" className="about minerConsultation">
         <div className="text_wrap">
           <h2 className="about-header">კონსულტაცია</h2>
@@ -336,11 +311,17 @@ function App() {
           </ul>
         </div>
         <div className="img_wrap">
-          <img src={team} alt="..." />
+          <Carousel interval={1000} style={{ width: '100%' }}>
+            {consultion.map((member) => (
+              <Carousel.Item>
+                <img style={{ width: '100%', height: 300 }} src={member} alt="..." />
+              </Carousel.Item>
+            ))}
+          </Carousel>
         </div>
       </Scroll.Element>
       <Scroll.Element name="specialThanks" className="partners specialThanks">
-        <h1>განსაკუთრებული მადლობა</h1>
+        <h1 className="text-center">განსაკუთრებული მადლობა</h1>
         <hr />
         <ul id="achievements">
           <li>უტა კილასონია</li>
@@ -352,7 +333,7 @@ function App() {
         </ul>
       </Scroll.Element>
       <Scroll.Element name="team" className="team">
-        <h2 className="mb-4">{t('team')}</h2>
+        <h2 className="mb-4 text-center">{t('team')}</h2>
         <Carousel style={{ width: '100%' }}>
           {teamMembers.map((member) => (
             <Carousel.Item>
@@ -365,19 +346,19 @@ function App() {
           ))}
         </Carousel>
       </Scroll.Element>
-      <footer >
+      <footer>
         <div>
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-            Facebook
+          <a href="https://www.instagram.com/terra_tech2023?igsh=ODA1NTc5OTg5Nw==" target="_blank" rel="noopener noreferrer">
+            Instagram
           </a>
         </div>
         <div>
-          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.youtube.com/channel/UCkuOnabYNc5SYthvKRmewNA" target="_blank" rel="noopener noreferrer">
             YouTube
           </a>
         </div>
         <div>
-          <a href="mailto:terratech2024@gmail.com">Gmail</a>
+          <a href="mailto:terratech2024@gmail.com">terratech2024@gmail.com</a>
         </div>
         <div>
           <span>მობილური: 595 90 00 56</span>
