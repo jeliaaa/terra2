@@ -44,7 +44,8 @@ import cave1 from './assets/cave/1.webp'
 import cave2 from './assets/cave/2.webp'
 import cave3 from './assets/cave/3.webp'
 import cave4 from './assets/cave/4.webp'
-import cave5 from './assets/cave/5.jpg'
+import cave5 from './assets/cave/5.webp'
+import cave6 from './assets/cave/6.webp'
 
 
 function App() {
@@ -53,7 +54,7 @@ function App() {
   const scroll = Scroll.animateScroll;
   const circleImgsUp = [circle1, circle2, circle3];
   const circleImgsDown = [circle5, circle4];
-  const consultion = [cave1, cave2, cave3, cave4, cave5]
+  const consultion = [cave1, cave2, cave3, cave4, cave5, cave6]
   const teamMembers = [
     {
       id: 1,
