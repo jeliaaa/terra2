@@ -101,7 +101,7 @@
 .info {
   height: 90dvh;
   padding: 30px;
-  background-color: #954535;
+  background: linear-gradient(180deg, blue 70%, orange);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -132,12 +132,16 @@
   width: 100%;
 }
 
+.twoo {
+  background: linear-gradient(180deg, blue, orange) !important;
+}
+
 .teamVision {
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-
+  background: linear-gradient(170deg, orange, blue);
 
   .text_wrap {
     margin-top: 15px;
@@ -170,11 +174,15 @@
   }
 }
 
+.circleImg {
+  transition: transform 1s ease-in-out;
+}
+
 .overview {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background-color: darkslateblue;
+  background: linear-gradient(100deg, orange, blue);
   color: white;
   gap: 20px;
 
@@ -209,7 +217,7 @@
 }
 
 .partners {
-  background-color: gainsboro;
+  background: linear-gradient(180deg, orange, blue);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -223,6 +231,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
 
     p {
       width: 70%;
@@ -251,7 +260,7 @@
 #achievements li::before {
   content: "\025A0";
   /* Unicode character for a bullet point */
-  color: #007BFF;
+  color: #fff;
   /* You can customize the color */
   font-weight: bold;
   position: absolute;
@@ -281,15 +290,28 @@ footer {
   height: 10dvh;
   padding: 5px 0;
   text-align: center;
-  background-color: gainsboro;
+  background-color: orange;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  
-  div{
+  color: white;
+  border-top: 1px solid white;
+  div {
     height: 4dvh;
-    a{
+
+    a {
       text-decoration: none;
+      color: white !important;
     }
   }
+}
+.specialThanks{
+  background-color: orange;
+  color: white !important;
+  font-weight: bolder;
+}
+.team{
+  color: white;
+  padding: 20px;
+  background: linear-gradient(180deg, blue, orange);
 }

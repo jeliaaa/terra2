@@ -31,12 +31,20 @@ import remote from './assets/comps/remote.jpg'
 import motor from './assets/comps/motor.jpg'
 import ros from './assets/comps/ros.JPG'
 import esp from './assets/comps/esp32.jpg'
+import circle1 from './assets/circle1.png'
+import circle2 from './assets/circle2.png'
+import circle3 from './assets/circle3.png'
+import circle4 from './assets/circle4.png'
+import visit1 from './assets/visit1.jpg'
+import visit3 from './assets/visit3.jpg'
+import visit4 from './assets/visit4.jpg'
 
 function App() {
   const { t } = useTranslation();
   const Scroll = require("react-scroll");
   const scroll = Scroll.animateScroll;
-
+  const circleImgsUp = [circle1, circle2, circle3];
+  const circleImgsDown = [circle3, circle4]
   const teamMembers = [
     {
       id: 1,
@@ -67,31 +75,31 @@ function App() {
     },
     // Add more team members as needed
   ];
-
+  const sliderVisit = [visit1, visit3, visit4]
   const comps = [
     {
-      id : 1,
-      name : 'Raspberry Pi4',
+      id: 1,
+      name: 'Raspberry Pi4',
       img: raspberry
     },
     {
-      id : 2,
-      name : 'ROS 2-humble',
+      id: 2,
+      name: 'ROS 2-humble',
       img: ros
     },
     {
-      id : 3,
-      name : 'ESP32',
+      id: 3,
+      name: 'ESP32',
       img: esp
     },
     {
-      id : 4,
-      name : 'Flysky transmiiter and reciever',
+      id: 4,
+      name: 'Flysky transmiiter and reciever',
       img: remote
     },
     {
-      id : 5,
-      name : 'ერთი ცხენის ძალის მქონე ძრავი რეზინის მუხლუხოთი',
+      id: 5,
+      name: 'ერთი ცხენის ძალის მქონე ძრავი რეზინის მუხლუხოთი',
       img: motor
     },
   ]
@@ -103,7 +111,6 @@ function App() {
     } else {
       setDeg(deg += 51.5);
     }
-    console.log(deg);
   }
   return (
     <div className="App">
@@ -168,7 +175,7 @@ function App() {
         </div>
       </Scroll.Element>
 
-      <Scroll.Element name="teamVision" className="teamVision" style={{ backgroundColor: 'darkviolet' }}>
+      <Scroll.Element name="teamVision" className="teamVision">
         <h1 className="mission-header">გუნდის მიზანი</h1>
         <div className="text_wrap">
           <p>TerraTech-ის მიზანია რევოლუცია მოვახდინოთ სამთო ინდუსტრიაში ინოვაციური გადაწყვეტილებების საშუალებით, რომლის პრიორიტეტია უსაფრთხოება, ეფექტურობა და მდგრადობა.
@@ -176,21 +183,21 @@ function App() {
         </div>
         <div className="img_wrap">
           <div className="three">
-            {[1, 2, 3].map((id) => (
-              <img src='https://picsum.photos/100' alt={id} style={{ borderRadius: '50%' }} />
+            {circleImgsUp.map((id) => (
+              <img src={id} alt={id} style={{ borderRadius: '50%', width: 100, height: 100 }} />
             ))}
           </div>
           <div className="two">
-            {[1, 2].map((id) => (
-              <img src='https://picsum.photos/100' alt={id} style={{ borderRadius: '50%' }} />
+            {circleImgsDown.map((id) => (
+              <img src={id} alt={id} style={{ borderRadius: '50%', width: 100, height: 100 }} />
             ))}
           </div>
         </div>
       </Scroll.Element>
 
-      <Scroll.Element name="teamVision" className="teamVision" style={{ backgroundColor: 'darkviolet' }}>
+      <Scroll.Element name="teamVision" className="teamVision twoo">
+        {/* <hr style={{width:'100%'}} /> */}
         <h1 className="mission-header">გუნდის წარმომავლობა</h1>
-
         <img src={map} alt="" />
         <div className="text_wrap">
           <p>TerraTech შედგება ერთგული მეგობრებისაგან. ჩვენი მრავალფეროვანი გუნდი აერთიანებს უამრავ უნარებსა და გამოცდილებას, რომელიც ქმნის გარემოს სადაც კოლექტიური გარემო ხელს უწყობს ინოვაციურ წინსვლას.
@@ -200,26 +207,35 @@ function App() {
 
       <Scroll.Element name="overview" className="overview">
         <h1>პროექტის მიმოხილვა</h1>
+        <iframe width="95%" height="280" src="https://www.youtube.com/embed/YTkbug0QiAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <hr />
         <div className="video_wrap">
           <h4>რობოტი მაღაროელი</h4>
-          <iframe width="95%" height="280" src="https://www.youtube.com/embed/DeumyOzKqgI?si=EBY9NbIZn6c2XhZn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="95%" height="280" src="https://www.youtube.com/embed/SiWEZiv0HP4?si=4UUKJylA01seoCMX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
 
         <div className="text_wrap">
-          <p>ჩვენი რობოტი მაქსიმალურად ურუნველყოფს მაღაროში სახიფათო გარემოს განეიტრალებასა და კავშირის დამყარებას სამონიტორინგო სისტემასთან. რობოტის ყველაზე მნიშვნელოვანი ფუნქციაა მომუშავე პერსონალის ჯანმრთელობისა და უსაფრთხოების მონაცემების შეგროვება,  რომელზეც მუდმივი წვდომა აქვს სამონიტორინგო სამსახურს. აღსანიშნავია, რომ ჩვენი რობოტი მოსალოდნელ საშიშროებას აფიქსირებს რამაც შესაძლოა მაღაროელის სიცოცხლე გადაარჩინოს. გარდა ამისა რობოტის ფუნქციონალში შედის: <br />
+          <p>ჩვენი რობოტი მაქსიმალურად უზრუნველყოფს მაღაროში სახიფათო გარემოს განეიტრალებასა და კავშირის დამყარებას სამონიტორინგო სისტემასთან. რობოტის ყველაზე მნიშვნელოვანი ფუნქციაა მომუშავე პერსონალის ჯანმრთელობისა და უსაფრთხოების მონაცემების შეგროვება,  რომელზეც მუდმივი წვდომა აქვს სამონიტორინგო სამსახურს. აღსანიშნავია, რომ ჩვენი რობოტი მოსალოდნელ საშიშროებას აფიქსირებს, რამაც შესაძლოა მაღაროელის სიცოცხლე გადაარჩინოს. რობოტის ძირითადი ფუნქციებია: <br />
             <br />1)	მავნე აირების დაფიქსირებას და ფილტრაცია
-            <br />2)	სამუშაოს დამოუკიდებლად  განხორციელება
-            <br />3)	3D რუკის შექმნა
-            <br />4)	ჭკვიანი სავენტილაციო სისტემასთან კავშირი
-            <br />5)	თვითდატენვა</p>
+            <br />2)	მაღაროს 3D რუკის შექმნა
+            <br />3)	ჭკვიანი სავენტილაციო სისტემასთან კავშირი
+            <br />4)	მძიმე ობიექტების გადაზიდვა
+            <br />5)	თვითდატენვა
+            <br />6) 	პირველადი დახმარების გაწევა <br /> <br />
+            აღსანიშნავია რომ ყველა ზემოთჩამოთვლილ სამუშაოს რობოტი ასრულებს დამოუკიდებლად, თუმცა საჭიროების შემთხვევაში მისი მართვა შესაძლებელი იქნება პულტის მეშვეობითაც.</p>
         </div>
 
         <div className="block">
+          <iframe width="95%" height="280"
+            src="https://www.youtube.com/embed/Ly4z99Gp_O4?si=evMXk0X1seu2GWn3"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
           <Carousel interval={1000} style={{ width: '100%' }}>
-            {[1, 2, 3].map((member) => (
+            {sliderVisit.map((member) => (
               <Carousel.Item>
-                <img style={{ width: '100%' }} src="https://picsum.photos/200" alt="..." />
+                <img style={{ width: '100%', height:300 }} src={member} alt="..." />
               </Carousel.Item>
             ))}
           </Carousel>
@@ -227,38 +243,42 @@ function App() {
         <hr />
         <div className="block">
           <h4>ჭკვიანი უნიფორმა</h4>
-          <Carousel interval={500} style={{ width: '100%' }}>
-            {[1, 2, 3].map((member) => (
-              <Carousel.Item>
-                <img style={{ width: '100%' }} src="https://picsum.photos/200" alt="..." />
-              </Carousel.Item>
-            ))}
-          </Carousel>
           <div className="text_wrap">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit quos voluptates nulla nostrum quisquam ratione at corporis mollitia expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. In libero dolorum beatae corrupti laudantium odio ipsa, cum repudiandae quo exercitationem aliquam sed. Numquam eaque quisquam quae tenetur nesciunt odit blanditiis!</p>
+            <p>
+              ჭკვიანი უნიფორმა შედგება 4 კომპონენტისაგან: ჩაფხუტი, ტანსაცმელი, ქამარი და ფეხსაცმელი. უნიფორმა აგროვებს, მაღაროელების სასიცოცხლო მონაცემებს როგორიცაა: მათი წნევა, პულსი, ტემპერატურა და სხვა. იგი აგროვებს ინფორმაციას მათთან ახლო მდებარე აირებზე და გარემოზე, ხოლო საშიშროების შემთხვევაში ხმოვან სიგნალს გამოსცემს თვით მაღაროელისთვის და ასევე ატყობინებს სამონიტორინგო სისტემას. უნიფორმის საშუალებით შესაძლებელია თითოეული მაღაროელის ადგილმდებარეობის დადგენა რაც საშიშროების შემთხვევაში ადამიანის გადარჩენის შანსებს გაცილებით ზრდის. ყველა ზემოჩამოთვლილი მონაცემი ავტომატურად ისახება სამონიტორინგო სისტემაზე. უნიფორმის ერთერთი უნიკალური ფუნქცია არის სიარულისას ელექტროენერგიის გამომუშვება რაც  ზოგავს მაღაროს ელექტროენერგიის მოხმარებას. აქედან გამომდიანარე უნიფორმას შეუძლია თავისი თავი ამარაგოს უწყვეტი ელექტროენერგიით რაც მაღაროელებს შეუმსუბექბს თავიანთ სამუშაოს.
+            </p>
           </div>
-          <div style={{ width: '95%', height: 280 }} ></div>
+          <iframe width="95%" height="280" src="https://www.youtube.com/embed/XpTgFsk_dTs?si=RvNoLGF8_coXj2yh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="95%" height="280" src="https://www.youtube.com/embed/uTkR5ew8-ZE?si=-_mohGnqP0g-VdC2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <hr />
         <div className="block">
-          <h4>ჭკვიანი ვენტილაცია</h4>
+          <h4>ჭკვიანი სავენტილაცო სისტემა</h4>
           <div className="text_wrap">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit quos voluptates nulla nostrum quisquam ratione at corporis mollitia expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. In libero dolorum beatae corrupti laudantium odio ipsa, cum repudiandae quo exercitationem aliquam sed. Numquam eaque quisquam quae tenetur nesciunt odit blanditiis!</p>
+            <p>
+              წარმოგიდგენთ ჭკვიან სავენტილაციო სისტემას, რომელიც არის ინოვაციური გადაწყვეტა, მაღაროელების ჯანმრთელობაზე. მოწინავე სენსორებისა და რეალურ დროში ანალიტიკის გამოყენებით, ჩვენი სისტემა არეგულირებს ჰაერის ნაკადს, უზრუნველყოფს ჰაერის ოპტიმალურ ხარისხს და ამცირებს საფრთხეებს. ტრადიციული მეთოდებისგან განსხვავებით, ის ადაპტირდება მაღაროს მრავალფეროვან გარემოსთან, ამცირებს ენერგიის მოხმარებას და გარემოზე ზემოქმედებას. გარდა ამისა, ის ითვალისწინებს მაღალ ხარჯებს, რომლებიც დაკავშირებულია ჩვეულებრივი ვენტილაციის გამოყენებით. აღსანიშნავია, რომ სავენტილაციო სისტემის მართვა შესაძლეელია დისტანციურად, ადამიანის საფრთხეში ჩარევის გარეშე აძლიერებს ოპერაციულ ზედამხედველობას, სამუშაო გარემოს და ადამიანის უსაფრთხოებას.
+            </p>
           </div>
-          <div style={{ width: '95%', height: 280 }} ></div>
+          <iframe width="95%" height="280" src="https://www.youtube.com/embed/eIrF_UXHd9o?si=XWYKCZgwjsW0Slxm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <hr />
         <div className="block">
           <h4>მონიტორინგის სისტემა</h4>
           <div className="text_wrap">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odit quos voluptates nulla nostrum quisquam ratione at corporis mollitia expedita.Lorem ipsum dolor sit amet consectetur adipisicing elit. In libero dolorum beatae corrupti laudantium odio ipsa, cum repudiandae quo exercitationem aliquam sed. Numquam eaque quisquam quae tenetur nesciunt odit blanditiis!</p>
+            <p>
+              წარმოგიდგენთ ჩვენს სამონიტორინგო სისტემას, რომლის მთავარი მიზანია მაღაროში დაამყაროს უსაფრთხოება და ეფექტურობა. ეს ინოვაციური გადაწყვეტა სცილდება ტრადიციულ მონიტორინგს და გთავაზობთ რეალურ დროში, მაღაროში ყველა მაღაროელის სიას მათი უნიფორმიდან მოწოდებული სასიცოცხლო მაჩვენებლებით, როგორიცაა პულსი, წნევა, ტემპერატურა და მათ გარშემო ჰაერის ხარისხს. სამონიტორინგო სისტემის საშუალებით შესაძლებელია მაღაროს მთლიანი სავენტილაციო სისტემის მართვა, ის ავტომატურად  უზრუნველყოფს მაღაროში ჰაერის ხარისხის მონიტორინგს, თუმცა საჭიროებიდან გამომდინარე შესაძლებელია მისი ხელით მართვა. სისტემას ასევე გააჩნია რუკა, სადაც ნაჩვენებია თითოეული მაღაროელის მდებარეობა, დავალებული სამუშაო და სავენტილაციო წერტლების ძირითადი ადგილები. კრიტიკულ სიტუაციებში, ყოველ წამს აქვს მნიშვნელობა და ეს ყოვლისმომცველი სამონიტორინგო სისტემა, ქმნის ერთგვაირ სიმბიოზს სხვა კომპონენტებთან ერთად, იგი წარმოადგენს სიცოცხლის გადარჩენის ძალას, რომელიც ხაზს უსვამს ერთიანი, მოწინავე ტექნოლოგიების განვითარებას ქართულ და უცხოურ სამთო ინდუსტრიაში.
+            </p>
           </div>
-          <div style={{ width: '95%', height: 280 }} ></div>
+          <iframe width="95%" height="280" src="https://www.youtube.com/embed/L29cO-R52pY?si=_fSVD4e50daT7P_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </Scroll.Element>
       <Scroll.Element name="projectInfo" className="about" style={{ backgroundColor: 'antiquewhite' }}>
         <div className="img_wrap">
           <div className="graph">
+            <div style={{ position: 'absolute', left: '41%', top: '60%', zIndex: 101, textAlign: 'center', fontSize: 'small', color: '#fff' }}>
+              <i class="fa-solid fa-rotate-right fa-2xl"></i>
+              <h5>შეეხეთ!</h5>
+            </div>
             <img style={{ zIndex: 100, cursor: 'pointer' }} onClick={() => setDegrees()} className="btnImg" src={buttonImg} alt="..." />
             <img style={{ transform: `rotate(${deg}deg)`, zIndex: '-2' }} className="circleImg" src={circleImg} alt="..." />
           </div>
@@ -270,7 +290,7 @@ function App() {
         {comps.map((e) => (
           <div key={e} className="partner">
             <p>{e.name}</p>
-            <img style={{ borderRadius: '50%', width:100, height:100 }} src={e.img} alt="..." />
+            <img style={{ borderRadius: '50%', width: 100, height: 100 }} src={e.img} alt="..." />
           </div>
         ))}
       </Scroll.Element>
@@ -305,40 +325,38 @@ function App() {
 
         {/* <ReactPlayer controls url={'https://youtu.be/DeumyOzKqgI?si=I8C-HXa0AmPkhofN'} /> */}
       </Scroll.Element>
-      <Scroll.Element name="minerConsultation" className="about">
+      <Scroll.Element name="minerConsultation" className="about minerConsultation">
         <div className="text_wrap">
           <h2 className="about-header">კონსულტაცია</h2>
           <ul style={{ listStyle: 'none' }}>
-            <li><i className="fa-solid fa-location-dot" style={{ color: "#EF8600" }}></i> საქართველოს ტექნიკური უნივერსიტეტი</li>
-            <li><i className="fa-solid fa-user" style={{ color: "#EF8600" }}></i> საქართველოს ტექნიკური უნივერსიტეტი</li>
+            <li><i className="fa-solid fa-location-dot" style={{ color: "blue" }}></i> ტექნიკური უნივერსიტეტის სამთო გეოლოგიური შახტა ლაბორატორია</li>
+            <li><i className="fa-solid fa-user" style={{ color: "blue" }}></i> დავით კუპატაძე</li>
+            <li><i className="fa-solid fa-user" style={{ color: "blue" }}></i> ავტანდილ კუპატაძე</li>
+            <li><i className="fa-solid fa-user" style={{ color: "blue" }}></i> მერაბ მეგრელიძე</li>
           </ul>
         </div>
         <div className="img_wrap">
           <img src={team} alt="..." />
         </div>
       </Scroll.Element>
-      <Scroll.Element name="specialThanks" className="partners" style={{ backgroundColor: 'gold' }}>
+      <Scroll.Element name="specialThanks" className="partners specialThanks">
         <h1>განსაკუთრებული მადლობა</h1>
         <hr />
         <ul id="achievements">
-          <li>Completed a challenging project ahead of schedule, exceeding expectations.</li>
-          <li>Received Employee of the Month award for outstanding dedication and performance.</li>
-          <li>Successfully led a cross-functional team to achieve a 20% increase in productivity.</li>
-          <li>Implemented innovative solutions that resulted in a cost savings of 15%.</li>
-          <li>Attained a professional certification in [Your Field of Expertise].</li>
-          <li>Published an article in [Reputable Journal/Magazine] on [Topic].</li>
-          <li>Contributed to [Company/Team] winning the [Specific Award or Recognition].</li>
-          <li>Consistently met or exceeded sales targets for [Number] consecutive quarters.</li>
-          <li>Volunteered for and successfully executed a community outreach program.</li>
-          <li>Completed [Number] hours of professional development training in [Specific Skill].</li>
+          <li>უტა კილასონია</li>
+          <li>ალექსანდრე ჯელია</li>
+          <li>გიორგი გობაძე</li>
+          <li>დავით კუპატაძე</li>
+          <li>ზუგდიდის და ბათუმის ტექნოპარკი</li>
+          <li>გიგა ფარულავა</li>
         </ul>
       </Scroll.Element>
-      <Scroll.Element name="team" className="team" style={{ backgroundColor: 'red', padding: 20 }}>
+      <Scroll.Element name="team" className="team">
         <h2 className="mb-4">{t('team')}</h2>
         <Carousel style={{ width: '100%' }}>
           {teamMembers.map((member) => (
             <Carousel.Item>
-              <div style={{ backgroundColor: 'red', width: '100%', height: 400 }}></div>
+              <div style={{ width: '100%', height: 400 }}></div>
               <Carousel.Caption>
                 <img alt="..." src={member.img} style={{ borderRadius: '50%' }} />
                 <h3>{member.name}</h3>
@@ -359,10 +377,10 @@ function App() {
           </a>
         </div>
         <div>
-          <a href="mailto:your-email@gmail.com">Gmail</a>
+          <a href="mailto:terratech2024@gmail.com">Gmail</a>
         </div>
         <div>
-          <span>Mobile: +1 (123) 456-7890</span>
+          <span>მობილური: 595 90 00 56</span>
         </div>
       </footer>
     </div>
